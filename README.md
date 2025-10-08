@@ -5,7 +5,7 @@ Date: October 5, 2025 (JST)
 
 ---
 
-# README: EMRIO Synthetic Model: Monte Carlo-based Internal Robustness Analysis
+# Enterprise-level Multi-Regional Input-Output (EMRIO) Synthetic Model: Monte Carlo-based Internal Robustness Analysis
 ## Overview
 
 This repository provides a minimal and reproducible example for the Monte Carlo-based internal robustness analysis used in the EMRIO framework of [Katafuchi *et al.* (2024)](#reference).
