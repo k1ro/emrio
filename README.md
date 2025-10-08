@@ -267,7 +267,7 @@ You may:
 - Not use any part of the code or data for commercial purposes
   without prior written consent from the authors.
 
-See the `LICENSE` file for details.
+See the [LICENSE](./LICENSE) file for details.
 
 ## Reference
 
