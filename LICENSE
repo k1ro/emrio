@@ -1,0 +1,31 @@
+===============================================================================
+License for the EMRIO Synthetic Model Code and Documentation
+===============================================================================
+
+© 2025 Yuya Katafuchi and Keiichiro Kanemoto,
+Graduate School of Environmental Studies, Tohoku University, Sendai, Japan.
+
+The EMRIO Synthetic Model (including all Julia source files, modules, and documentation) is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) License.
+
+You are free to:
+ - Use and share the materials for noncommercial academic and research purposes,
+   provided that proper attribution is given (e.g., by citing the associated
+   publication).
+ - Not use the materials for commercial purposes.
+ - Not redistribute modified versions or derivative works.
+
+For any commercial use or redistribution, please contact the corresponding author.
+
+-------------------------------------------------------------------------------
+Additional Permission
+-------------------------------------------------------------------------------
+You are permitted to modify the EMRIO source code for personal, academic, or research purposes within your own environment, provided that:
+ 1. The modified version is not distributed in any form, and
+ 2. The modified version is not used for commercial purposes.
+
+-------------------------------------------------------------------------------
+Disclaimer
+-------------------------------------------------------------------------------
+The EMRIO code and accompanying materials are provided “as is,” without any warranty of any kind, express or implied. The authors and their institutions shall not be held liable for any damages arising from its use.
+
+Full license text: https://creativecommons.org/licenses/by-nc-nd/4.0/
