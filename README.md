@@ -104,7 +104,11 @@ The repository follows a consistent rule to distinguish public scripts, public f
 
 ### Step 1 - Data Definition (`define_data.jl`)
 
-Builds a small two-country, three-sector EMRIO structure for demonstration purposes.
+Builds a sector-level MRIO and expands it into a twofold EMRIO used throughout the example.
+
+First, a two-country, three-sector MRIO is constructed with internally consistent accounting: intermediate transactions `T`, final demand `y`, value added `va`, total output `x`, technical coefficients `A = T ./ x'`, value-added coefficients `v = va ./ x`, and a destination-specific final demand matrix `y_s` that splits `y` into domestic versus foreign absorption.
+
+Second, the sector MRIO is disaggregated into subsegments `{Firm, Other}` on both rows and columns using per–country–sector shares `r` (supply side) and `c` (use side). Expansion matrices `R` and `C` map the sector system to a twofold system of size `(2N × 2N)` via `T_E = R * T * C'`, and column-oriented vectors are mapped consistently (`xcol = C * x`, `y = C * y`, `va = C * va`, `y_s_q = C * y_s`). The expanded coefficients `(A, v)` are recomputed in the twofold space and the column identities are checked again.
 
 Modules used:
 
@@ -126,14 +130,22 @@ Outputs:
 | Variable                                | Description                                    |
 | --------------------------------------- | ---------------------------------------------- |
 | `sector`                                | 6×6 synthetic sector-level MRIO                |
-| `em`                                    | 12×12 twofold EMRIO (Firm/Other decomposition) |
+| `em`                                    | 12×12 twofold EMRIO (Firm/Other Subsegment disaggregation) |
 | `COUNTRIES`, `SECTORS`, `N`, `Nc`, `Ns` | Dimension constants                            |
+
+Notes:
+
+* Numbers are synthetic and chosen to satisfy accounting identities.
+* Twofold expansion uses shares `r, c ∈ [0, 1]` per country–sector; labels for base sectors and subsegments are provided for later block operations.
+* The expanded destination-specific final demand `y_s_q` follows the global country ordering and is required by Step 3.
 
 ---
 
 ### Step 2 - Scenario Generation (`generate_T_scenarios.jl`)
 
-Generates randomized transaction matrices (`T`) for Monte Carlo analysis by reallocating a portion of firm-to-firm (FF) transactions.
+Generates randomized transaction matrices (`T`) for Monte Carlo analysis by randomly removing a fraction of firm-to-firm (FF) links and locally reallocating the removed values within the same base-sector block.
+
+This process simulates structural incompleteness in firm-level data and tests how EMRIO’s results respond to potential link loss.
 
 Modules used:
 
@@ -157,14 +169,18 @@ Outputs:
 
 Notes:
 
+* A fixed share (`rate`) of FF links is randomly selected without replacement (restricted to cross-border links if `cross_border=true`) and set to zero.
+* The removed FF values are then locally redistributed within the same 2×2 base-sector block, preserving the row and column totals of the block.
+* The reallocation procedure represents local substitution among firm and non-firm segments while maintaining base-sector supply and demand balance.
 * Compatible with Julia ≥ 1.5 (avoids `replace=false` keyword in `rand()`).
-* No GVC computation is performed in this step.
 
 ---
 
 ### Step 3 - GVC Indicator Computation (`calculate_gvc.jl`)
 
-Computes Global Value Chain indicators for each scenario using the UNCTAD-style formulation `F = v̂ * L * ê`.
+Computes GVC indicators for each Monte Carlo scenario and summarizes uncertainty across scenarios.
+
+For each transaction matrix `T` in `Ts`, the routine recomputes coefficients and the Leontief inverse, builds an export-selection diagonal including both intermediate and final exports, forms the value-added flow matrix `F = v̂ * L * ê` [(Casella *et al.,* 2019)](#reference), and aggregates country totals for DVA, FVA, DVX, Exports, and GVCPR. The per-scenario results are then pooled to report medians, confidence intervals, relative uncertainty, and a normalized elasticity.
 
 Modules used:
 
@@ -271,7 +287,8 @@ See the [LICENSE](./LICENSE) file for details.
 
 ## Reference
 
-Katafuchi, Y., Li, X., Moran, D., Yamada, T., Fujii, H., & Kanemoto, K. (2024). Construction of An Enterprise-Level Global Supply Chain Database. Preprint at https://doi.org/10.21203/rs.3.rs-3651986/v3.
+- Katafuchi, Y., Li, X., Moran, D., Yamada, T., Fujii, H., & Kanemoto, K. (2024). Construction of An Enterprise-Level Global Supply Chain Database. Preprint at https://doi.org/10.21203/rs.3.rs-3651986/v3.
+- Casella, B., Bolwijn, R., Moran, D., & Kanemoto, K. (2019). UNCTAD insights: Improving the analysis of global value chains: the UNCTAD-Eora Database. *Transnational corporations* 26, 115–142.
 
 ---
 
