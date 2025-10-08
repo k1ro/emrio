@@ -199,10 +199,11 @@ df_each, df_sum = compute_gvc_unctad_and_summarize_simple(em, Ts, ["A", "B"])
 
 Outputs:
 
-| Variable  | Type              | Description                                    |
-| --------- | ----------------- | ---------------------------------------------- |
-| `df_each` | Vector{DataFrame} | Per-scenario GVC indicators                    |
-| `df_sum`  | DataFrame         | Country-level summary (median, 95% CI, ±U%, ε) |
+| Variable  | Type                | Description                                                                          |
+| --------- | ------------------- | ------------------------------------------------------------------------------------ |
+| `df_each` | `Vector{DataFrame}` | Per-scenario tables with columns: `ISO_COUNTRY, DVA, FVA, DVX, Exports, GVCPR`       |
+| `df_sum`  | `DataFrame`         | Country-level summary including `Median, P2.5, P97.5, U (±% of median), ε (per 10%)` |
+
 
 ---
 
