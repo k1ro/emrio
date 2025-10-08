@@ -18,7 +18,7 @@ All modular components are organized under the `modules/` directory.
 ## Directory Structure
 
 ```
-emrio_synthetic/
+emrio/
 ├── define_data.jl              # Step 1: Build sector MRIO and twofold EMRIO
 ├── generate_T_scenarios.jl     # Step 2: Generate Monte Carlo transaction matrices
 ├── calculate_gvc.jl            # Step 3: Compute and summarize GVC indicators
