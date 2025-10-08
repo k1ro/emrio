@@ -127,11 +127,13 @@ em     = make_emrio_twofold(sector)
 
 Outputs:
 
-| Variable                                | Description                                    |
-| --------------------------------------- | ---------------------------------------------- |
-| `sector`                                | 6×6 synthetic sector-level MRIO                |
-| `em`                                    | 12×12 twofold EMRIO (Firm/Other Subsegment disaggregation) |
-| `COUNTRIES`, `SECTORS`, `N`, `Nc`, `Ns` | Dimension constants                            |
+| Variable               | Type                                                                                                                                                                                                                                                                                                                                 | Description                                                   |
+| ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------- |
+| `sector`               | NamedTuple（`T::Matrix{Float64}, y::Vector{Float64}, va::Vector{Float64}, x::Vector{Float64}, A::Matrix{Float64}, v::Vector{Float64}, y_s::Matrix{Float64}, countries::Vector{String}, sectors::Vector{String}, idx_country::Vector{String}, idx_sector::Vector{String}`）                                                             | 6×6 synthetic sector-level MRIO with `T, y, va, x, A, v, y_s` |
+| `em`                   | NamedTuple（`nodes::Vector{NamedTuple}, map::Vector{Int}, tags::Vector{Symbol}, R::Matrix{Float64}, C::Matrix{Float64}, T::Matrix{Float64}, y::Vector{Float64}, va::Vector{Float64}, xcol::Vector{Float64}, A::Matrix{Float64}, v::Vector{Float64}, y_s_q::Matrix{Float64}, base_labels::Vector{String}, sub_labels::Vector{String}`） | 12×12 twofold EMRIO（Firm/Other Subsegment disaggregation）     |
+| `COUNTRIES`, `SECTORS` | `Vector{String}`                                                                                                                                                                                                                                                                                                                     | Dimension labels                                              |
+| `N`, `Nc`, `Ns`        | `Int`                                                                                                                                                                                                                                                                                                                                | Dimension constants                                           |
+
 
 Notes:
 
@@ -162,10 +164,11 @@ Ts, meta = generate_T_scenarios_FF_reallocation(
 
 Outputs:
 
-| Variable | Description                                                      |
-| -------- | ---------------------------------------------------------------- |
-| `Ts`     | Vector of `R` transaction matrices with randomized reallocations |
-| `meta`   | Metadata (sampling rate, number of candidates, seed)             |
+| Variable | Type                                                                                                      | Description                                                                |
+| -------- | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `Ts`     | `Vector{Matrix{Float64}}`                                                                                 | Vector of `R` transaction matrices after FF removal and local reallocation |
+| `meta`   | `NamedTuple`（`Ncand::Int, kdrop::Int, rate::Float64, cross_border::Bool, seed::Int, max_excess::Float64`） | Metadata（sampling rate, number removed/candidates, seed, diagnostics）      |
+
 
 Notes:
 
