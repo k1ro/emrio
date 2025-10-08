@@ -1,7 +1,7 @@
 """
 compute_gvc_unctad_for_T_simple(em, T, countries)
 
-Compute UNCTAD-style Global Value Chain (GVC) indicators (Casella et al, 2019) for a single
+Compute UNCTAD-style Global Value Chain (GVC) indicators (Casella et al., 2019) for a single
 transaction matrix `T`.
 
 ### Computation

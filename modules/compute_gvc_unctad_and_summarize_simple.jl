@@ -1,7 +1,7 @@
 """
 compute_gvc_unctad_and_summarize_simple(em, Ts, countries; probs=(0.025,0.5,0.975))
 
-Batch-evaluate UNCTAD-style GVC indicators (Casella et al, 2019) for multiple Monte Carlo
+Batch-evaluate UNCTAD-style GVC indicators (Casella et al., 2019) for multiple Monte Carlo
 transaction-matrix scenarios and summarize results with uncertainty
 statistics.
 

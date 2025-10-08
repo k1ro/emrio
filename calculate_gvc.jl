@@ -11,7 +11,7 @@ matrices.
 To evaluate and summarize GVC indicators for multiple `T` scenarios
 produced by the `generate_T_scenarios_FF_reallocation()` routine.
 Each scenario is processed using the UNCTAD accounting framework
-(`F = v̂ * L * ê`) (Casella et al, 2019), followed by aggregation and uncertainty analysis.
+(`F = v̂ * L * ê`) (Casella et al., 2019), followed by aggregation and uncertainty analysis.
 
 ### Workflow
 1. **Load environment and dependencies**
