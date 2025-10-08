@@ -108,7 +108,7 @@ Builds a sector-level MRIO and expands it into a twofold EMRIO used throughout t
 
 First, a two-country, three-sector MRIO is constructed with internally consistent accounting: intermediate transactions `T`, final demand `y`, value added `va`, total output `x`, technical coefficients `A = T ./ x'`, value-added coefficients `v = va ./ x`, and a destination-specific final demand matrix `y_s` that splits `y` into domestic versus foreign absorption.
 
-Second, the sector MRIO is disaggregated into subsegments `{Firm, Other}` on both rows and columns using per–country–sector shares `r` (supply side) and `c` (use side). Expansion matrices `R` and `C` map the sector system to a twofold system of size `(2N × 2N)` via `T_E = R * T * C'`, and column-oriented vectors are mapped consistently (`xcol = C * x`, `y = C * y`, `va = C * va`, `y_s_q = C * y_s`). The expanded coefficients `(A, v)` are recomputed in the twofold space and the column identities are checked again.
+Second, the sector MRIO is disaggregated into subsegments `{Firm, Other}` on both rows and columns using per-country-sector shares `r` (supply side) and `c` (use side). Expansion matrices `R` and `C` map the sector system to a twofold system of size `(2N × 2N)` via `T_E = R * T * C'`, and column-oriented vectors are mapped consistently (`xcol = C * x`, `y = C * y`, `va = C * va`, `y_s_q = C * y_s`). The expanded coefficients `(A, v)` are recomputed in the twofold space and the column identities are checked again.
 
 Modules used:
 
@@ -136,7 +136,7 @@ Outputs:
 Notes:
 
 * Numbers are synthetic and chosen to satisfy accounting identities.
-* Twofold expansion uses shares `r, c ∈ [0, 1]` per country–sector; labels for base sectors and subsegments are provided for later block operations.
+* Twofold expansion uses shares `r, c ∈ [0, 1]` per country-sector; labels for base sectors and subsegments are provided for later block operations.
 * The expanded destination-specific final demand `y_s_q` follows the global country ordering and is required by Step 3.
 
 ---
