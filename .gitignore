@@ -1,0 +1,58 @@
+# ----------------------------------------------------------------------
+# EMRIO Synthetic Model: Monte Carlo-based Internal Robustness Analysis
+# Author: Yuya Katafuchi (Tohoku University / RIHN)
+# Date: October 5, 2025 (JST)
+# ----------------------------------------------------------------------
+
+# --- OS-specific temporary files ---
+.DS_Store
+Thumbs.db
+
+# --- Editor and IDE configurations ---
+.vscode/
+.idea/
+*.jl~
+*.jl#
+*~
+
+# --- Julia build and cache files ---
+.julia/
+*.ji
+Manifest.toml          # not tracked to keep environment lightweight
+deps/
+build/
+
+# --- Data and output files ---
+*.csv
+*.xlsx
+*.jld2
+*.h5
+*.zip
+*.tar
+*.gz
+*.tmp
+*.out
+*.log
+
+# --- Figures and generated images ---
+*.png
+*.pdf
+*.svg
+*.eps
+
+# --- Jupyter notebook checkpoints (if any) ---
+.ipynb_checkpoints/
+*.ipynb~
+*.ipynb_checkpoints
+
+# --- OS backup / misc ---
+ehthumbs.db
+Icon?
+Desktop.ini
+
+# --- Project-specific ---
+# Exclude synthetic outputs generated during Monte Carlo runs
+output/
+results/
+data/
+cache/
