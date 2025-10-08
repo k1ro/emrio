@@ -8,7 +8,7 @@ Date: October 5, 2025 (JST)
 # README: EMRIO Synthetic Model: Monte Carlo-based Internal Robustness Analysis
 ## Overview
 
-This repository provides a minimal and reproducible example for the Monte Carlo-based internal robustness analysis used in the EMRIO framework of Katafuchi *et al.* (2024).
+This repository provides a minimal and reproducible example for the Monte Carlo-based internal robustness analysis used in the EMRIO framework of [Katafuchi *et al.* (2024)](#reference).
 It reproduces the logic of the uncertainty experiment described in the manuscript: generating randomized transaction matrices and evaluating Global Value Chain (GVC) indicators under simulated data perturbations.
 
 All modular components are organized under the `modules/` directory.
