@@ -1,6 +1,6 @@
 ---
 
-Author: Yuya Katafuchi
+Author: Yuya Katafuchi and Keiichiro Kanemoto
 Date: October 5, 2025 (JST)
 
 ---
@@ -289,6 +289,13 @@ You may:
 
 See the [LICENSE](./LICENSE) file for details.
 
+---
+
+## Acknowledgements
+This work was supported by the Research Institute for Humanity and Nature, Project No. 14200135 (K.K.).
+
+---
+
 ## Reference
 
 - Katafuchi, Y., Li, X., Moran, D., Yamada, T., Fujii, H., & Kanemoto, K. (2025). Construction of An Enterprise-Level Global Supply Chain Database. *Nature Communications*, Accepted.
@@ -296,7 +303,7 @@ See the [LICENSE](./LICENSE) file for details.
 
 ---
 
-Prepared by Yuya Katafuchi (Tohoku University / RIHN)
+Prepared by Yuya Katafuchi (Tohoku University / RIHN) and Keiichiro Kanemoto (Tohoku University / RIHN / Shinshu University)
 Date: October 5, 2025 (JST)
 
 ---
