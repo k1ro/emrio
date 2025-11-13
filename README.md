@@ -5,10 +5,10 @@ Date: October 5, 2025 (JST)
 
 ---
 
-# Enterprise-level Multi-Regional Input-Output (EMRIO) Synthetic Model: Monte Carlo-based Internal Robustness Analysis
+# Enterprise-level Multi-Regional Input–Output (EMRIO) Synthetic Model: Monte Carlo-based Internal Robustness Analysis
 ## Overview
 
-This repository provides a minimal and reproducible example for the Monte Carlo-based internal robustness analysis used in the EMRIO framework of [Katafuchi *et al.* (2024)](#reference).
+This repository provides a minimal and reproducible example for the Monte Carlo-based internal robustness analysis used in the EMRIO framework of [Katafuchi *et al.* (2025)](#reference).
 It reproduces the logic of the uncertainty experiment described in the manuscript: generating randomized transaction matrices and evaluating Global Value Chain (GVC) indicators under simulated data perturbations.
 
 All modular components are organized under the `modules/` directory.
@@ -264,7 +264,7 @@ All numbers are dimensionless synthetic values intended for demonstration only.
 * This repository does not reproduce the full construction process of the EMRIO database. The actual EMRIO estimation relies on a complex integration of multiple proprietary and public datasets, including:
   - Firm-level financial and corporate structure data from FactSet (FS), Bureau van Dijk (Orbis/Osiris), Bloomberg, and the NEEDS Financial Database.
   - Bills of Lading (BoL) and customs shipment records from FS, ManifestDB, and Importers Databases (IDS).
-  - Sector-level input-output and supply-use tables from national statistical offices and the United Nations Statistics Division (UNSNA, UN Comtrade).
+  - Sector-level input–output and supply–use tables from national statistical offices and the United Nations Statistics Division (UNSNA, UN Comtrade).
   - Supplementary macroeconomic aggregates from the UN Main Aggregates (MA) and Official Country (OC) datasets.
 * These sources are combined through institution-specific preprocessing, harmonization, and balancing procedures that cannot be made public. The internal data structures are licensed and their disclosure would reveal schema information under contractual restriction. Only this synthetic and structure-independent example is made available to demonstrate the computational logic.
 
@@ -291,7 +291,7 @@ See the [LICENSE](./LICENSE) file for details.
 
 ## Reference
 
-- Katafuchi, Y., Li, X., Moran, D., Yamada, T., Fujii, H., & Kanemoto, K. (2024). Construction of An Enterprise-Level Global Supply Chain Database. Preprint at https://doi.org/10.21203/rs.3.rs-3651986/v3.
+- Katafuchi, Y., Li, X., Moran, D., Yamada, T., Fujii, H., & Kanemoto, K. (2025). Construction of An Enterprise-Level Global Supply Chain Database. *Nature Communications*, Accepted.
 - Casella, B., Bolwijn, R., Moran, D., & Kanemoto, K. (2019). UNCTAD insights: Improving the analysis of global value chains: the UNCTAD-Eora Database. *Transnational corporations* 26, 115–142.
 
 ---
