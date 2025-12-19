@@ -298,7 +298,7 @@ This work was supported by the Research Institute for Humanity and Nature, Proje
 
 ## Reference
 
-- Katafuchi, Y., Li, X., Moran, D., Yamada, T., Fujii, H., & Kanemoto, K. (2025). Construction of An Enterprise-Level Global Supply Chain Database. *Nature Communications*, Accepted.
+- Katafuchi, Y., Li, X., Moran, D., Yamada, T., Fujii, H., & Kanemoto, K. (2025). [Construction of An Enterprise-Level Global Supply Chain Database](https://doi.org/10.1038/s41467-025-66083-2). *Nature Communications*, 16, 11158.
 - Casella, B., Bolwijn, R., Moran, D., & Kanemoto, K. (2019). UNCTAD insights: Improving the analysis of global value chains: the UNCTAD-Eora Database. *Transnational corporations* 26, 115–142.
 
 ---
